@@ -1,6 +1,7 @@
-import Navbar from "../navbar/Navbar"
+import NavbarWithMyQuests from "../navbar/NavbarWithMyQuests"
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+
 
 
 
@@ -16,7 +17,7 @@ export default function HomepageWithoutLogin() {
     const rewardIn = useRef(null);
     const areaIn = useRef(null);
 
-    
+
 
     useEffect(
         () => {
@@ -117,7 +118,7 @@ export default function HomepageWithoutLogin() {
 
     return (
         <>
-        <Navbar/>
+        <NavbarWithMyQuests/>
             <div className="row">
                 <div className="col-4 p-4 text-center">
                     <div className="p-3">
