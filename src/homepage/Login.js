@@ -4,12 +4,9 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 
 
+export default function Login() {
 
-
-export default function Login()
-{
-
-    const[guilds, setGuilds] = useState([]);
+    const [guilds, setGuilds] = useState([]);
 
     const nameIn = useRef(null);
     const pwIn = useRef(null);
@@ -26,11 +23,9 @@ export default function Login()
         []
     );
 
-    function pwValid(name, authentication_seal)
-    {
-        for(let g of guilds)
-        {
-            if(g.name==name && g.authentication_seal==authentication_seal)
+    function pwValid(name, authentication_seal) {
+        for (let g of guilds) {
+            if (g.name == name && g.authentication_seal == authentication_seal)
                 return true;
         }
     }
@@ -51,14 +46,14 @@ export default function Login()
     }
 
 
-    return(
+    return (
         <>
-        
-        <input type="btn" ref={nameIn} placeholder="GUILD NAME" />
-        <input type="btn" ref={pwIn} placeholder="AUTHENTICATION SEAL" />
-        
-        <button onClick={handleLogin}> LOGIN </button>
-        
+
+            <input type="btn" ref={nameIn} placeholder="GUILD NAME" />
+            <input type="btn" ref={pwIn} placeholder="AUTHENTICATION SEAL" />
+
+            <button onClick={handleLogin}> LOGIN </button>
+
         </>
     );
 
