@@ -1,11 +1,12 @@
-import NavbarWithMyQuests from "../navbar/NavbarWithMyQuests"
+
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import Navbar from "../navbar/Navbar";
 
 
 
 
-export default function HomepageWithoutLogin() {
+export default function Homepage() {
     const [quests, setQuests] = useState([]);
     const [minRank, setMin] = useState(0);
     const [maxRank, setMax] = useState(6);
@@ -114,11 +115,9 @@ export default function HomepageWithoutLogin() {
         return true;
 
     }
-
-
     return (
         <>
-        <NavbarWithMyQuests/>
+        <Navbar/>
             <div className="row">
                 <div className="col-4 p-4 text-center">
                     <div className="p-3">

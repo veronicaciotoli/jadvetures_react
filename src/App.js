@@ -1,13 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HomepageWithoutLogin from './homepage/HomepageWithoutLogin';
-import HomepageWithLogin from './homepage/HomepageWithLogin';
-import Navbar from './navbar/Navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import Login from './homepage/Login';
+import { atom } from 'jotai';
+import Homepage from './homepage/Homepage';
 
-
+ export const currentGuild = atom();
 
 
 function App() {
@@ -16,9 +14,9 @@ function App() {
       <BrowserRouter>
         
         <Routes>
-          <Route index element={<HomepageWithoutLogin />} />
+          <Route index element={<Homepage />} />
           <Route path="/login" element={<Login />}/>
-          <Route path="/homepagewithlogin" element={<HomepageWithLogin/> }/>
+          
 
         </Routes>
       </BrowserRouter>
