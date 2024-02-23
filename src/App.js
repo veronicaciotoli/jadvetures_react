@@ -10,9 +10,9 @@ import Homepage from './homepage/Homepage';
 
 function App() {
   return (
-   <>
+    <>
       <BrowserRouter>
-        
+
         <Routes>
           <Route index element={<Homepage />} />
           <Route path="/login" element={<Login />}/>
@@ -20,8 +20,8 @@ function App() {
 
         </Routes>
       </BrowserRouter>
-   </>
-   
+    </>
+
   );
 }
 

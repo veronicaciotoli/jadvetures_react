@@ -42,7 +42,7 @@ export default function Login()
        
     }
 
-    return(
+    return (
         <>
         
             <input type="btn" ref={nameIn} placeholder="GUILD NAME" />
