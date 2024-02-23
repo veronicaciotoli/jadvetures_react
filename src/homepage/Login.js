@@ -5,51 +5,59 @@ import { useState, useRef, useEffect } from 'react';
 import { currentGuild } from '../App';
 
 
-export default function Login()
-{
+export default function Login() {
 
-    const[guild, setGuild] = useAtom(currentGuild);
+    const [guild, setGuild] = useAtom(currentGuild);
 
     const nameIn = useRef(null);
     const pwIn = useRef(null);
 
-    
+
     let navigate = useNavigate();
 
     function handleLogin() {
-    
+
         const requestBody = {
             name: nameIn.current.value,
             authentication_seal: pwIn.current.value
         };
-        
-        
+
+
         axios.post("/guilds/login", requestBody)
-        .then(response => {
-            if (response.data) {
-                setGuild(response.data);
-                // Effettua il login e reindirizza alla home page
-                navigate('/');
-            } else {
-                // Mostra un messaggio di errore
-                alert('Password o Username non validi.');
-            }
-        })
-        .catch(error => {
-            // Gestisci gli errori
-            console.error('Errore nella richiesta di login della gilda:', error);
-        });
-       
+            .then(response => {
+                if (response.data) {
+                    setGuild(response.data);
+                    // Effettua il login e reindirizza alla home page
+                    navigate('/');
+                } else {
+                    // Mostra un messaggio di errore
+                    alert('Password o Username non validi.');
+                }
+            })
+            .catch(error => {
+                // Gestisci gli errori
+                console.error('Errore nella richiesta di login della gilda:', error);
+            });
+
     }
 
     return (
         <>
-        
-            <input type="btn" ref={nameIn} placeholder="GUILD NAME" />
-            <input type="password" ref={pwIn} placeholder="AUTHENTICATION SEAL" />
-            
-            <button onClick={handleLogin}> LOGIN </button>
-                    
+            <div className="d-flex justify-content-center text-center" style={{ minHeight: '100vh', backgroundImage: `url('https://static.iphoneitalia.com/wp-content/uploads/2019/06/Dark-Quest-2.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div class="card m-4" style={{ backgroundColor: "#291f12", height: '60%' }}>
+                    <div class="card-body m-3 p-4">
+                        <h2 class="text-light">ESEGUI LOGIN</h2>
+                        <input className="mb-3 mt-3" type="btn" ref={nameIn} placeholder="GUILD NAME" />
+                        <br />
+                        <input className="mb-3" type="password" ref={pwIn} placeholder="AUTHENTICATION SEAL" />
+                        <br />
+                        <button onClick={handleLogin}> LOGIN </button>
+
+                    </div>
+                </div>
+            </div>
+
+
         </>
     );
 

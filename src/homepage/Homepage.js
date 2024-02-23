@@ -117,20 +117,22 @@ export default function Homepage() {
     }
     return (
         <>
-        <Navbar/>
-            <div className="row">
-                <div className="col-4 p-4 text-center">
-                    <div className="p-3">
-                        <input type="btn" ref={typeIn} placeholder="Type" />
-                        <br />
-                        <label for="customRange1" class="form-label">Rank Min: </label>
-                        <input type="btn" ref={minIn} className="form-range" id="customRange1" onChange={(e) => setMin(e.target.value)} />
-                        <label for="customRange1" class="form-label">Rank Max: </label>
-                        <input type="btn" ref={maxIn} className="form-range " id="customRange1" onChange={(e) => setMax(e.target.value)} />
-                        <input type="btn" ref={rewardIn} placeholder="Reward" />
-                        <input type="btn" ref={areaIn} placeholder="Area" />
-                        <br />
-                        <button onClick={() => setFlicker(!flicker)}> FILTRA </button>
+            <Navbar />
+            <div className=" row d-flex justify-content-center text-center" style={{ minHeight: '100vh', backgroundImage: `url('https://ilnuovopiaceredeisensi.altervista.org/wp-content/uploads/2020/05/Gnomo-di-Wroclaw-3-1536x864.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+
+                <div className="col-4 p-4 text-center ">
+                    <div className="card justify-content-center" style={{ backgroundColor: "#E9E9FD", height: '60%' }}>
+                        <div className="p-3">
+                            <h2>FILTRI</h2>
+                            <br />
+                            <input className="mb-2 text-center" type="btn" ref={typeIn} placeholder="Type" />
+                            <input className="mb-2 text-center" type="btn" placeholder="Min Rank" ref={minIn} onChange={(e) => setMin(e.target.value)} />
+                            <input className="mb-2 text-center" type="btn" placeholder="Max Rank" ref={maxIn} onChange={(e) => setMax(e.target.value)} />
+                            <input className="mb-2 text-center" type="btn" ref={rewardIn} placeholder="Min Reward" />
+                            <input className="mb-2 text-center" type="btn" ref={areaIn} placeholder="Area" />
+                            <br />
+                            <button onClick={() => setFlicker(!flicker)}> FILTRA </button>
+                        </div>
                     </div>
                 </div >
                 <div className="col-8 p-4">
