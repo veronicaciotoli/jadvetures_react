@@ -24,7 +24,7 @@ export default function Login()
         };
         
         
-        axios.post("/api/guildlogin", requestBody)
+        axios.post("/guilds/login", requestBody)
         .then(response => {
             if (response.data) {
                 setGuild(response.data);
@@ -46,7 +46,7 @@ export default function Login()
         <>
         
             <input type="btn" ref={nameIn} placeholder="GUILD NAME" />
-            <input type="btn" ref={pwIn} placeholder="AUTHENTICATION SEAL" />
+            <input type="password" ref={pwIn} placeholder="AUTHENTICATION SEAL" />
             
             <button onClick={handleLogin}> LOGIN </button>
                     

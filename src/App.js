@@ -4,8 +4,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Login from './homepage/Login';
 import { atom } from 'jotai';
 import Homepage from './homepage/Homepage';
+import MyQuest from './quests/MyQuest';
+import QuestDetail from './quests/QuestDetail';
 
- export const currentGuild = atom();
+export const currentGuild = atom();
 
 
 function App() {
@@ -16,6 +18,9 @@ function App() {
         <Routes>
           <Route index element={<Homepage />} />
           <Route path="/login" element={<Login />}/>
+          <Route path="/guildquests" element={<MyQuest />}/>
+          <Route path="/questdetail/:quest_id" element={<QuestDetail/>} />
+
           
 
         </Routes>

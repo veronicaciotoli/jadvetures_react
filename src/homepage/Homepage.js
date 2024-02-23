@@ -22,7 +22,7 @@ export default function Homepage() {
 
     useEffect(
         () => {
-            axios.get("/api/quest").then(
+            axios.get("/quests").then(
                 (response) => {
                     setQuests(response.data);
                 }

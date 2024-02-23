@@ -9,10 +9,7 @@ const Navbar = (props) => {
     const[guild, setGuild] = useAtom(currentGuild);
 
     
-    function deleteCurrentGuild(id)
-    {
-        axios.delete(`/api/guild/${id}`);
-    }
+   
     return (
         <>
             <div className="row">
@@ -23,7 +20,7 @@ const Navbar = (props) => {
                             <span className="navbar-toggler-icon" />
                         </button>
                         <div className="container-fluid">
-                        {guild&&<Link className="navbar-brand" to="/">My Quests</Link>}
+                        {guild&&<Link className="navbar-brand" to="/guildquests">My Quests</Link>}
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon" />
                         </button>
@@ -31,7 +28,7 @@ const Navbar = (props) => {
                             <div className="navbar-nav">
                                 {!guild&&<Link className="nav-link active" aria-current="page" to="/login">LOGIN</Link>}
                                 {guild&&<h1 className="nav-link active" aria-current="page" to="/">{guild.name}</h1>}
-                                {guild&&<Link className="nav-link active" aria-current="page" to="/" onClick={deleteCurrentGuild(guild.id)}>
+                                {guild&&<Link className="nav-link active" aria-current="page" to="/" onClick={()=>setGuild()}>
                                             <img src={guild.seal_img_url} alt="Guild Seal" />
                                             </Link> }
                             </div>
