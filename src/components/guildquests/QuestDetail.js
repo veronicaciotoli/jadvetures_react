@@ -4,7 +4,7 @@ import axios from "axios";
 import { Navigate, useNavigate } from 'react-router-dom';
 import Navbar from "../navbar/Navbar";
 import { useAtom } from "jotai";
-import { currentGuild } from "../App";
+import { currentGuild } from "../../App";
 
 
 

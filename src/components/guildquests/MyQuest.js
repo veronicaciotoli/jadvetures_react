@@ -1,4 +1,4 @@
-import { currentGuild } from "../App";
+import { currentGuild } from "../../App";
 import { useAtom } from "jotai";
 import Navbar from "../navbar/Navbar";
 import QuestForm from "./QuestForm";
@@ -12,7 +12,7 @@ export default function MyQuest() {
 
     function readOnlyCard(q) {
         return (
-            <div className="card text-center" style={{ backgroundColor: "rgba(233, 233, 253, 0.5)"}}>
+            <div className="card text-center" style={{ backgroundColor: "rgba(233, 233, 253, 0.5)" }}>
                 <div className="card-body text-center">
                     <h5 className="card-title text-center"> Type: {q.type} <br /> Reward: {q.reward}</h5>
                     <h6 className="card-subtitle mb-2 text-muted">Area: {q.area} <br /> Status: {q.status} Rank: {q.rank}</h6>

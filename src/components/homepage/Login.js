@@ -2,12 +2,13 @@ import { atom, useAtom } from 'jotai';
 import axios from 'axios';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
-import { currentGuild } from '../App';
+import { currentGuild, currentParty } from '../../App';
 
 
 export default function Login() {
 
     const [guild, setGuild] = useAtom(currentGuild);
+    const [party, setParty] = useAtom(currentParty);
 
     const nameIn = useRef(null);
     const pwIn = useRef(null);
@@ -37,6 +38,22 @@ export default function Login() {
             .catch(error => {
                 // Gestisci gli errori
                 console.error('Errore nella richiesta di login della gilda:', error);
+            });
+
+        axios.post("/parties/login", requestBody)
+            .then(response => {
+                if (response.data) {
+                    setParty(response.data);
+                    // Effettua il login e reindirizza alla home page
+                    navigate('/partyquests');
+                } else {
+                    // Mostra un messaggio di errore
+                    alert('Password o Username non validi.');
+                }
+            })
+            .catch(error => {
+                // Gestisci gli errori
+                console.error('Errore nella richiesta di login del Party:', error);
             });
 
     }

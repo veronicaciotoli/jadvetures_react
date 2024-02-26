@@ -2,6 +2,7 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import Navbar from "../navbar/Navbar";
+import { fromLetterToNumber } from "../../util/util";
 
 
 
@@ -36,42 +37,13 @@ export default function Homepage() {
             <div class="card" >
                 <div class="card-body" style={{ backgroundColor: "rgba(233, 233, 253, 0.5)" }}>
                     <h5 class="card-title"> Type: {q.type} <br /> Reward: {q.reward}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Area: {q.area} <br /> Status: {q.status} Rank: {q.rank}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Area: {q.area} <br /> Status: {q.status} <br />Rank: {q.rank}</h6>
                 </div>
             </div>
         )
     }
 
-    function fromLetterToNumber(letter) {
-        let value;
 
-        switch (letter) {
-            case "S":
-                value = 5;
-                break;
-
-            case "A":
-                value = 4;
-                break;
-
-            case "B":
-                value = 3;
-                break;
-
-            case "C":
-                value = 2;
-                break;
-
-            case "D":
-                value = 1;
-                break;
-
-            default:
-                value = -1
-        }
-        return value;
-
-    }
 
     function isShowable(q, type, minRank, maxRank, minReward, area, status) {
         console.log(q)
@@ -126,15 +98,15 @@ export default function Homepage() {
                             <h2>FILTRI</h2>
                             <br />
                             <input className="mb-2 text-center" type="btn" ref={typeIn} placeholder="Type" />
-                            <br/>
+                            <br />
                             <input className="mb-2 text-center" type="btn" placeholder="Min Rank" ref={minIn} onChange={(e) => setMin(e.target.value)} />
-                            <br/>
+                            <br />
                             <input className="mb-2 text-center" type="btn" placeholder="Max Rank" ref={maxIn} onChange={(e) => setMax(e.target.value)} />
-                            <br/>
+                            <br />
                             <input className="mb-2 text-center" type="btn" ref={rewardIn} placeholder="Min Reward" />
-                            <br/>
+                            <br />
                             <input className="mb-2 text-center" type="btn" ref={areaIn} placeholder="Area" />
-                            <br/>
+                            <br />
                             <br />
                             <button onClick={() => setFlicker(!flicker)}> FILTRA </button>
                         </div>
