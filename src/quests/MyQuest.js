@@ -12,10 +12,10 @@ export default function MyQuest() {
 
     function readOnlyCard(q) {
         return (
-            <div class="card" style={{ backgroundColor: "#E9E9FD" }}>
-                <div class="card-body">
-                    <h5 class="card-title"> Type: {q.type} <br /> Reward: {q.reward}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Area: {q.area} <br /> Status: {q.status} Rank: {q.rank}</h6>
+            <div className="card text-center" style={{ backgroundColor: "rgba(233, 233, 253, 0.5)"}}>
+                <div className="card-body text-center">
+                    <h5 className="card-title text-center"> Type: {q.type} <br /> Reward: {q.reward}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">Area: {q.area} <br /> Status: {q.status} Rank: {q.rank}</h6>
                 </div>
             </div>
         )
@@ -26,7 +26,7 @@ export default function MyQuest() {
         <>
             <Navbar />
 
-            <div className="row">
+            <div className="row" style={{ minHeight: '100vh', backgroundImage: `url('https://img6.arthub.ai/64b27b4f-1343.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 <div className="col-4 p-4 text-center">
                     <div className="p-3">
                         <QuestForm />
@@ -37,7 +37,7 @@ export default function MyQuest() {
                     <div className="row">
                         {guild && guild.posted_quests.map(q => (
                             <div key={q.id} className="col-4 p-2 ">
-                                <div className="card" style={{ backgroundColor: "#E9E9FD" }}>
+                                <div className="card text center" style={{ backgroundColor: "rgba(233, 233, 253, 0)" }}>
                                     <Link className="text-decoration-none" to={`/questdetail/${q.id}`}>{readOnlyCard(q)} </Link>
                                 </div>
                             </div>

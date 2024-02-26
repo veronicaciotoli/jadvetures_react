@@ -33,8 +33,8 @@ export default function Homepage() {
 
     function readOnlyCard(q) {
         return (
-            <div class="card" style={{ backgroundColor: "#E9E9FD" }}>
-                <div class="card-body">
+            <div class="card" >
+                <div class="card-body" style={{ backgroundColor: "rgba(233, 233, 253, 0.5)" }}>
                     <h5 class="card-title"> Type: {q.type} <br /> Reward: {q.reward}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Area: {q.area} <br /> Status: {q.status} Rank: {q.rank}</h6>
                 </div>
@@ -118,28 +118,33 @@ export default function Homepage() {
     return (
         <>
             <Navbar />
-            <div className=" row d-flex justify-content-center text-center" style={{ minHeight: '100vh', backgroundImage: `url('https://ilnuovopiaceredeisensi.altervista.org/wp-content/uploads/2020/05/Gnomo-di-Wroclaw-3-1536x864.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className=" row d-flex justify-content-center text-center" style={{ minHeight: '100vh', backgroundImage: `url('https://spg-images.s3.us-west-1.amazonaws.com/5224f821-e178-4b0e-9371-02f1f0d71d4a')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 
                 <div className="col-4 p-4 text-center ">
-                    <div className="card justify-content-center" style={{ backgroundColor: "#E9E9FD", height: '60%' }}>
+                    <div className="card justify-content-center" style={{ backgroundColor: "rgba(233, 233, 253, 0.5)", height: '60%' }}>
                         <div className="p-3">
                             <h2>FILTRI</h2>
                             <br />
                             <input className="mb-2 text-center" type="btn" ref={typeIn} placeholder="Type" />
+                            <br/>
                             <input className="mb-2 text-center" type="btn" placeholder="Min Rank" ref={minIn} onChange={(e) => setMin(e.target.value)} />
+                            <br/>
                             <input className="mb-2 text-center" type="btn" placeholder="Max Rank" ref={maxIn} onChange={(e) => setMax(e.target.value)} />
+                            <br/>
                             <input className="mb-2 text-center" type="btn" ref={rewardIn} placeholder="Min Reward" />
+                            <br/>
                             <input className="mb-2 text-center" type="btn" ref={areaIn} placeholder="Area" />
+                            <br/>
                             <br />
                             <button onClick={() => setFlicker(!flicker)}> FILTRA </button>
                         </div>
                     </div>
                 </div >
                 <div className="col-8 p-4">
-                    <div className="row">
+                    <div className="row" style={{ backgroundColor: "rgba(233, 233, 253, 0.5)", height: '60%' }}>
                         {quests.filter(q => isShowable(q, typeIn.current.value, minIn.current.value, maxIn.current.value, rewardIn.current.value, areaIn.current.value)).map(q => (
                             <div key={q.id} className="col-4 p-2 ">
-                                <div className="card" style={{ backgroundColor: "#E9E9FD" }}>
+                                <div className="card" style={{ backgroundColor: "rgba(233, 233, 253, 0.5)" }}>
                                     {readOnlyCard(q)}
                                 </div>
                             </div>

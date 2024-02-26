@@ -11,7 +11,7 @@ const Navbar = (props) => {
     return (
         <>
             <div className="row">
-                <nav className="navbar navbar-expand-lg col-12 p-2" style={{ backgroundColor: "#291f12" }}>
+                <nav className="navbar navbar-expand-lg col-12 p-2" style={{ backgroundColor: "#1c100b" }}>
                     <div className="container-fluid">
                         <div className="collapse navbar-collapse justify-content-left">
                             <Link className="navbar-brand text-light" to="/">All Quests</Link>

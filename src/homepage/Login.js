@@ -43,10 +43,10 @@ export default function Login() {
 
     return (
         <>
-            <div className="d-flex justify-content-center text-center" style={{ minHeight: '100vh', backgroundImage: `url('https://static.iphoneitalia.com/wp-content/uploads/2019/06/Dark-Quest-2.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                <div class="card m-4" style={{ backgroundColor: "#291f12", height: '60%' }}>
+            <div className="d-flex justify-content-center text-center" style={{ minHeight: '100vh', backgroundImage: `url('https://img6.arthub.ai/64b27b4f-1343.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                <div class="card m-4" style={{ backgroundColor: "r#a49f9d", height: '60%' }}>
                     <div class="card-body m-3 p-4">
-                        <h2 class="text-light">ESEGUI LOGIN</h2>
+                        <h2 class="text-dark">ESEGUI LOGIN</h2>
                         <input className="mb-3 mt-3" type="btn" ref={nameIn} placeholder="GUILD NAME" />
                         <br />
                         <input className="mb-3" type="password" ref={pwIn} placeholder="AUTHENTICATION SEAL" />
